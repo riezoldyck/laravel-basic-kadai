@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // ルーティングを設定するコントローラを宣言する
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,12 @@ Route::get('/', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 
+Route::get('/posts/create', [PostController::class, 'create']);
+
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
+
 Route::get('/posts/{id}', [PostController::class, 'show']);
+
+Route::get('/requests/create', [RequestController::class, 'create']);
+
+Route::post('/requests/confirm', [RequestController::class, 'confirm'])->name('requests.confirm');
