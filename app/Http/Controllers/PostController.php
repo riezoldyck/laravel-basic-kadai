@@ -45,7 +45,7 @@ class PostController extends Controller
         // バリデーションを設定する
         $request->validate([
             'title' => 'required|max:20',
-            'content' => 'required|max:255'
+            'content' => 'required|max:200'
         ]);
 
         // フォームの入力内容をもとに、テーブルにデータを追加する
